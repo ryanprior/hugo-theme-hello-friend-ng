@@ -35,6 +35,17 @@
             <div class="post-content">
                 {{ .Content }}
             </div>
+
+            {{- if .Params.social_followup }}
+            {{- with .Site.Params.social }}
+            <div class="social-followup">
+              <br />
+              <h3>Thank you for reading!</h3>
+              I welcome your feedback:
+              {{ partial "social-icons.html" . }}
+            </div>
+            {{- end}}
+            {{- end}}
         </article>
 
         <hr />
