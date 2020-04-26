@@ -4,28 +4,35 @@
   text-decoration: none;
   font-weight: bold;
   font-display: auto;
-  font-family: monospace, monospace;
+  font-family: monospace;
+  font-size: 1.125rem;
+
 
   img {
     height: 44px;
   }
 
   &__mark {
-    margin-right: 5px;
+    margin-right: 1ex;
   }
 
   &__text {
-    font-size: 1.125rem;
   }
 
   &__cursor {
     display: inline-block;
     width: 10px;
-    height: 1rem;
-    background: #fe5186;
-    margin-left: 5px;
+    height: 0.9rem;
+    position: relative;
+    bottom: 0.1rem;
+    background: $highlight-mango;
+    vertical-align: baseline;
     border-radius: 1px;
-    animation: cursor 1s infinite;
+    animation: cursor 1.4s infinite;
+
+    .dark-theme & {
+      background: $highlight-magenta;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -37,7 +44,7 @@
 }
 
 @keyframes cursor {
-  0% { opacity: 0; }
+  0% { opacity: 0.6; }
   50% { opacity: 1; }
-  100% { opacity: 0; }
+  100% { opacity: 0.6; }
 }
