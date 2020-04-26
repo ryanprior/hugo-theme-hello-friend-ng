@@ -1,0 +1,127 @@
+@mixin flicker($scale, $name) {
+  @keyframes flicker-#{$name} {
+    0%   {opacity: 0.27861 * $scale;}
+    5%   {opacity: 0.34769 * $scale;}
+    10%  {opacity: 0.23604 * $scale;}
+    15%  {opacity: 0.90626 * $scale;}
+    20%  {opacity: 0.18128 * $scale;}
+    25%  {opacity: 0.83891 * $scale;}
+    30%  {opacity: 0.65583 * $scale;}
+    35%  {opacity: 0.67807 * $scale;}
+    40%  {opacity: 0.26559 * $scale;}
+    45%  {opacity: 0.84693 * $scale;}
+    50%  {opacity: 0.96019 * $scale;}
+    55%  {opacity: 0.08594 * $scale;}
+    60%  {opacity: 0.20313 * $scale;}
+    65%  {opacity: 0.71988 * $scale;}
+    70%  {opacity: 0.53455 * $scale;}
+    75%  {opacity: 0.37288 * $scale;}
+    80%  {opacity: 0.71428 * $scale;}
+    85%  {opacity: 0.70419 * $scale;}
+    90%  {opacity: 0.70030 * $scale;}
+    95%  {opacity: 0.36108 * $scale;}
+    100% {opacity: 0.24387 * $scale;}
+  }
+}
+
+@mixin colorSeparation($offset, $scale) {
+  text-shadow: $offset 0 1px rgba(0,30,255,0.5 * $scale),
+               -1 * $offset 0 1px rgba(255,0,80,0.3 * $scale),
+               0 0 0.08rem;
+}
+
+@mixin textShadow($scale, $name) {
+  @keyframes textShadow-#{$name} {
+    0% {@include colorSeparation(0.4389924193300864px, $scale);}
+    5% {@include colorSeparation(2.7928974010788217px, $scale);}
+    10% {@include colorSeparation(0.02956275843481219px, $scale);}
+    15% {@include colorSeparation(0.40218538552878136px, $scale);}
+    20% {@include colorSeparation(3.4794037899852017px, $scale);}
+    25% {@include colorSeparation(1.6125630401149584px, $scale);}
+    30% {@include colorSeparation(0.7015590085143956px, $scale);}
+    35% {@include colorSeparation(3.896914047650351px, $scale);}
+    40% {@include colorSeparation(3.870905614848819px, $scale);}
+    45% {@include colorSeparation(2.231056963361899px, $scale);}
+    50% {@include colorSeparation(0.08084290417898504px, $scale);}
+    55% {@include colorSeparation(2.3758461067427543px, $scale);}
+    60% {@include colorSeparation(2.202193051050636px, $scale);}
+    65% {@include colorSeparation(2.8638780614874975px, $scale);}
+    70% {@include colorSeparation(0.48874025155497314px, $scale);}
+    75% {@include colorSeparation(1.8948491305757957px, $scale);}
+    80% {@include colorSeparation(0.0833037308038857px, $scale);}
+    85% {@include colorSeparation(0.09769827255241735px, $scale);}
+    90% {@include colorSeparation(3.443339761481782px, $scale);}
+    95% {@include colorSeparation(2.1841838852799786px, $scale);}
+    100% {@include colorSeparation(2.6208764473832513px, $scale);}
+  }
+}
+
+.crt::after {
+  @include flicker(0.032, 'light');
+  @include flicker(0.012, 'dark');
+
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(18, 16, 16);
+  opacity: 0;
+  z-index: 3;
+  pointer-events: none;
+  animation: flicker-light 0.15s infinite;
+
+  .dark-theme & {
+    background: rgb(255, 244, 244);
+    opacity: 1;
+    z-index: 3;
+    animation: flicker-dark 0.15s infinite;
+  }
+}
+
+.crt::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18,16,16, 0.08) 50%, rgba(255, 244, 244, 0.25) 50%),
+              linear-gradient(90deg,
+                              rgba(255, 0, 0, 0.12),
+                              rgba(0, 255, 0, 0.04),
+                              rgba(0, 0, 255, 0.12));
+  z-index: 3;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+
+  .dark-theme & {
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                linear-gradient(90deg,
+                                rgba(255, 0, 0, 0.06),
+                                rgba(0, 255, 0, 0.02),
+                                rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+  }
+}
+
+@include textShadow(0.6, 'dark');
+@include textShadow(0.23, 'light');
+
+.crt {
+  animation: textShadow-light 1.6s infinite;
+
+  .dark-theme & {
+    animation: textShadow-dark 1.6s infinite;
+  }
+
+  @media #{$media-size-phone} {
+    .menu {
+      animation: none;
+      text-shadow: none;
+    }
+  }
+}

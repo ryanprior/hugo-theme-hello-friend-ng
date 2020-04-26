@@ -1,20 +1,25 @@
 .menu {
-  background: #fafafa;
+  background: transparent;
   border-right: 1px solid;
   margin-right: 18px;
-  z-index: 9999;
-
-  .dark-theme & {
-    background: #252627;
-  }
+  z-index: 2;
 
   @media #{$media-size-phone} {
     position: absolute;
     top: 50px;
-    right: 0;
+    right: 1ex;
     border: none;
     margin: 0;
     padding: 10px;
+    background: $light-background-rosy;
+    border-radius: 0.25rem;
+    border: 1px solid $light-border-color;
+    z-index: 4;
+
+    .dark-theme & {
+      background: $dark-background-secondary;
+      border-color: $dark-border-color;
+    }
   }
 
   &__inner {

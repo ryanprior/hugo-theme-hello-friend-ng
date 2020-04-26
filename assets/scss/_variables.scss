@@ -2,6 +2,7 @@
 
 /* light theme color */
 $light-background: #fff;
+$light-background-rosy: #FFFEFE;
 $light-background-secondary: #eaeaea;
 $light-color: #222;
 $light-color-secondary: #999;
@@ -10,7 +11,7 @@ $light-border-color: #dcdcdc;
 /* dark theme colors */
 $dark-background: #292a2d;
 $dark-background-secondary: #3b3d42;
-$dark-color: #a9a9b3;
+$dark-color: #D1D1DE;
 $dark-color-secondary: #73747b;
 $dark-border-color: #4a4b50;
 
@@ -22,3 +23,11 @@ $media-size-tablet: "(max-width: 900px)";
   --phoneWidth: (max-width: 684px);
   --tabletWidth: (max-width: 900px);
 }
+
+$link-blue: #1845ca;
+$highlight-magenta: #fe5186;
+$highlight-vivid-pink: #FE759F;
+$highlight-pink: #FE96B6;
+$highlight-powder-pink: #FEAFC7;
+$highlight-mango: #FFA62B;
+$highlight-mango-cream: #FFCF8C;
