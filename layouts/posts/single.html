@@ -14,10 +14,15 @@
             </p>
         </div>
 
-        <article>
+        <article class="post-content">
+          <header>
             <h1 class="post-title">
                 <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
             </h1>
+
+            {{- if .Params.subtitle }}
+            <p class="subtitle">{{ .Params.subtitle | markdownify }}</p>
+            {{- end }}
 
             {{- if .Params.toc }}
                 <hr />
@@ -31,17 +36,18 @@
             {{ with .Params.Cover }}
                 <img src="/img/{{ . }}" class="post-cover" />
             {{ end }}
+          </header>
 
             <div class="post-content">
                 {{ .Content }}
             </div>
 
-            {{- if .Params.social_followup }}
+            {{- if eq .Params.social_followup "true" }}
             {{- with .Site.Params.social }}
             <div class="social-followup">
               <br />
               <h3>Thank you for reading!</h3>
-              I welcome your feedback:
+              <p>I welcome your feedback:</p>
               {{ partial "social-icons.html" . }}
             </div>
             {{- end}}

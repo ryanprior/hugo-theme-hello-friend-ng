@@ -3,6 +3,8 @@ html {
   line-height: 1.6;
   letter-spacing: .06em;
   scroll-behavior: smooth;
+
+  font-size: 14pt;
 }
 
 *,
@@ -17,7 +19,7 @@ body {
   font-family: 'Inter UI', -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",  Helvetica, Arial, sans-serif;
   font-display: auto;
   font-size: 1rem;
-  line-height: 1.54;
+  line-height: 1.45;
   background-color: $light-background;
   color: $light-color;
   text-rendering: optimizeLegibility;
