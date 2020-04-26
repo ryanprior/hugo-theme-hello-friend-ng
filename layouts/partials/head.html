@@ -32,6 +32,10 @@
     {{ end }}
 {{ end }}
 
+{{- if .Params.extra_css }}
+<link rel="stylesheet" type="text/css" href="/extra/{{ .Params.extra_css }}.css">
+{{- end }}
+
 <!-- Icons -->
 {{- partial "favicons.html" . }}
 
