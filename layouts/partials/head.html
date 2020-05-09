@@ -13,7 +13,7 @@
         {{ if .IsHome }}
             {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }} {{ end }}
         {{ else }}
-            {{ .Title }} :: {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
+            {{ .Title }} {{ .Params.subtitle_separator }} {{ .Params.subtitle }} :: {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
         {{ end }}
     </title>
 {{ end }}
@@ -52,7 +52,7 @@
 
 <!-- RSS -->
 {{ with .OutputFormats.Get "rss" -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s%s%s" />` .Rel .MediaType.Type .Permalink $.Site.Title $.Params.subtitle_separator $.Params.subtitle | safeHTML }}
 {{ end -}}
 
 <!-- JSON Feed -->

@@ -17,15 +17,14 @@
         <article class="post-content">
           <header>
             <h1 class="post-title">
-                <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+              <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
               {{- if .Params.title_image }}
               <img class="title unselectable" src="{{ .Params.title_image }}" alt="" />
               {{- end }}
+              {{- if .Params.subtitle }}
+              <p class="subtitle">{{ .Params.subtitle | markdownify }}</p>
+              {{- end }}
             </h1>
-
-            {{- if .Params.subtitle }}
-            <p class="subtitle">{{ .Params.subtitle | markdownify }}</p>
-            {{- end }}
 
             {{- if .Params.toc }}
                 <hr />
