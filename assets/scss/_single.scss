@@ -35,6 +35,19 @@
       border-top-style: solid;
     }
 
+    img.title {
+      height: 1.75ex;
+      position: relative;
+      bottom: 0.2ex;
+      line-height: 1ex;
+      display: inline-block;
+      vertical-align: middle;
+
+      .dark-theme & {
+        filter: invert(100%);
+      }
+    }
+
     .dark-theme & {
 
       a {
@@ -42,7 +55,8 @@
         filter: drop-shadow(0 0 0.08rem rgba(255,255,255, 0.5));
       }
 
-      .post-title, h1, h2 {
+      .post-title, h1, h2, h3 {
+        border-top-color: $highlight-pink;
       }
 
       h1 a {
@@ -79,10 +93,12 @@
   }
 
   .subtitle {
-      margin-top: -2ex;
+      margin-top: -0.25rem;
       margin-left: 1em;
       font-size: larger;
       font-style: italic;
+      font-weight: normal;
+      font-size: 1.25rem;
   }
 
   &-tags {
