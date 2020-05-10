@@ -13,7 +13,7 @@
         {{ if .IsHome }}
             {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }} {{ end }}
         {{ else }}
-            {{ .Title }} {{ .Params.subtitle_separator }} {{ .Params.subtitle }} :: {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
+            {{ partial "page-title" . }} :: {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
         {{ end }}
     </title>
 {{ end }}
@@ -40,7 +40,7 @@
 {{- partial "favicons.html" . }}
 
 {{- template "_internal/schema.html" . }}
-{{- template "_internal/twitter_cards.html" . }}
+{{- partial "twitter.html" . }}
 
 {{ range .Params.categories }}
     <meta property="article:section" content="{{ . }}" />

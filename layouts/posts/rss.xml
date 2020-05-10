@@ -14,7 +14,7 @@
         {{ end -}}
         {{ range .Pages }}
         <item>
-            <title>{{ .Title }}{{- if .Params.subtitle }} {{ .Params.subtitle_separator }} {{ .Params.subtitle }}{{- end }}</title>
+            <title>{{ partial "page-title" . }}</title>
             <link>{{ .Permalink }}</link>
             <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
             {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
