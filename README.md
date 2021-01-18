@@ -166,7 +166,7 @@ This theme is based on hello-friend-ng which is in turn inspired by the
 [hello-friend](https://github.com/panr/hugo-theme-hello-friend) and
 [hermit](https://github.com/Track3/hermit) themes. Thank you!
 
-Copyright © 2020 Ryan Prior and `hello-world-ng` contributors. See
+Copyright © 2021 Ryan Prior and `hello-world-ng` contributors. See
 [LICENSE.md](LICENSE.md) and the [hello-friend-ng
 license](https://github.com/rhazdon/hugo-theme-hello-friend-ng/blob/master/LICENSE.md)
 for more.
