@@ -130,7 +130,6 @@ Use [RealFaviconGenerator](https://realfavicongenerator.net/) to generate these 
 - stackoverflow
 - telegram
 - twitch
-- twitter
 - youtube
 
 ## Known issues

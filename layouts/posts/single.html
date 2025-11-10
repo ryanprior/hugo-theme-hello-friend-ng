@@ -106,7 +106,7 @@
             </div>
         {{ end }}
 
-        {{- if .Site.DisqusShortname }}
+        {{- if .Site.Params.DisqusShortname }}
             <div id="comments" class="thin">
                 {{ template "_internal/disqus.html" . }}
             </div>
