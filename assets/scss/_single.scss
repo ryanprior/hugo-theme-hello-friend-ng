@@ -68,6 +68,11 @@
     table {
       border-spacing: 0px;
 
+      @media #{$media-size-phone} {
+        transform: scale(0.7);
+        margin: -2rem -20%;
+      }
+
       thead {
         text-align: center;
       }
