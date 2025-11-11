@@ -48,6 +48,38 @@
       }
     }
 
+    .footnote-definitions {
+      padding-top: 1rem;
+      &::before {
+        content: "footnotes";
+        font-style: italic;
+        font-size: 0.8rem;
+        font-variant: small-caps;
+        position: relative;
+        top: -1rem;
+        border-top: 1px solid $highlight-mango;
+
+        .dark-theme & {
+          border-top-color: $highlight-pink;
+        }
+      }
+    }
+
+    table {
+      border-spacing: 0px;
+
+      thead {
+        text-align: center;
+      }
+      td {
+        padding: 0.15rem 0.35rem;
+      }
+      tr:nth-child(even) {
+        background-color: rgba(1,1,1,0.15);
+        border-bottom: 10px solid rgba(1,1,1,0.8);
+      }
+    }
+
     .dark-theme & {
 
       a {
