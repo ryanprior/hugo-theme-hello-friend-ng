@@ -26,6 +26,8 @@
               {{- end }}
             </h1>
 
+            {{ partial "stale-warning" . }}
+
             {{- if .Params.toc }}
                 <hr />
                 <aside id="toc">

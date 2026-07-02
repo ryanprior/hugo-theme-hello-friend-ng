@@ -1,0 +1,35 @@
+{{- $cutoff := now.AddDate -1 -6 0 -}}
+{{- $optOrg := dict "markup" "org" -}}
+
+{{- if and (not .Params.evergreen) (.Date.Before $cutoff) -}}
+
+<div class="old-post-warning">
+  <span class="calendar-icon" aria-hidden="true">
+    {{ partial "calendar-warning-icon" }}
+  </span>
+  <span>
+    {{- if .Params.stale_warning -}}
+    {{ .Params.stale_warning | .Page.RenderString $optOrg }}
+    {{- else -}}
+    <strong>Notice:</strong>
+    this post was published
+    <time
+      class="publication-age"
+      datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+      title="Originally published {{ .Date.Format "January 2, 2006" }}">
+      more than 18 months ago</time>.
+    It may be outdated, and I generally don't update posts this old.
+    {{- end -}}
+
+    {{- with .Params.superseded_by -}}
+    {{- with $.Site.GetPage . -}}
+    <p>
+      For a more recent treatment of the same topic, read
+      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>.
+    </p>
+    {{- end -}}
+    {{- end -}}
+  </span>
+</div>
+
+{{- end -}}

@@ -14,8 +14,7 @@
                     {{- range .Pages }}
                         <li class="post-item">
                             <a href="{{.Permalink}}">
-                            {{ $optOrg := dict "markup" "org" }}
-                                <span class="post-title">{{ partial "page-title" . | $.Page.RenderString $optOrg }}</span>
+                                <span class="post-title">{{ partial "page-title" . }}</span>
                                 <span class="post-day">
                                     {{ if .Site.Params.dateformShort }}
                                         {{ .Date.Format .Site.Params.dateformShort }}

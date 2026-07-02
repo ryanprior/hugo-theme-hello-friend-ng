@@ -48,6 +48,43 @@
       }
     }
 
+    .old-post-warning {
+      background: rgba(0,0,0,0.05);
+      padding: 0.75rem 1rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+
+      .dark-theme & {
+        background: rgba(255,255,255,0.05);
+      }
+
+      .calendar-icon {
+        vertical-align: middle;
+        svg {
+          flex: 0 0 auto;
+          width: 3rem;
+          height: 3rem;
+          fill: $highlight-mango;
+
+          .dark-theme & {
+            fill: $highlight-pink;
+          }
+        }
+      }
+
+      .publication-age {
+        text-decoration: underline dotted;
+        text-decoration-thickness: 1px;
+        cursor: help;
+      }
+
+      & > * {
+        margin: 0px;
+      }
+    }
+
     .footnote-definitions {
       padding-top: 1rem;
       &::before {
