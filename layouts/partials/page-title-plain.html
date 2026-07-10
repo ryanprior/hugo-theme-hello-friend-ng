@@ -1,0 +1,1 @@
+{{ .Title | $.Page.RenderString | plainify }}{{with .Params.subtitle_separator | plainify }} {{ . }}{{ end }}{{ with .Params.subtitle | $.Page.RenderString | plainify }} {{ . }}{{ end -}}

@@ -1,2 +1,1 @@
-{{ $optOrg := dict "markup" "org" }}
-{{ .Title | $.Page.RenderString $optOrg }} {{with .Params.subtitle_separator }}{{ . }} {{ end }}{{ .Params.subtitle | $.Page.RenderString $optOrg -}}
+{{- .Title | $.Page.RenderString }}{{with .Params.subtitle_separator }} {{ . }}{{ end }}{{with .Params.subtitle | $.Page.RenderString }} {{ . }}{{ end -}}
