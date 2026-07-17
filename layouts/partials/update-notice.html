@@ -1,0 +1,14 @@
+{{- if .Params.updated -}}
+{{- $updated := time.AsTime .Params.updated -}}
+<div class="update-notice">
+  <span class="update-icon" aria-hidden="true">
+    {{ partial "update-notice-icon" }}
+  </span>
+  <span
+    class="last-updated"
+    data-published="{{ $.Date.Format "2006-01-02T15:04:05Z07:00" }}"
+    data-updated="{{ $updated.Format "2006-01-02T15:04:05Z07:00" }}">
+    <noscript>Last updated {{ $updated.Format "2006-01-02" }}</noscript>
+  </span>
+</div>
+{{- end -}}
