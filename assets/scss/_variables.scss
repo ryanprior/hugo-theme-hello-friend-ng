@@ -5,13 +5,18 @@ $light-background: #fff;
 $light-background-rosy: #FFFEFE;
 $light-background-secondary: #eaeaea;
 $light-color: #222;
+$light-filter: invert(11%) sepia(14%) saturate(0%) hue-rotate(156deg) brightness(111%) contrast(99%);
+/* calculated using https://codepen.io/sosuke/pen/Pjoqqp */
 $light-color-secondary: #999;
 $light-border-color: #dcdcdc;
 
 /* dark theme colors */
 $dark-background: #292a2d;
 $dark-background-secondary: #3b3d42;
+$dark-background-hicontrast: #1b1c1e;
 $dark-color: #D1D1DE;
+$dark-filter: invert(94%) sepia(5%) saturate(441%) hue-rotate(201deg) brightness(90%) contrast(93%);
+/* calculated using https://codepen.io/sosuke/pen/Pjoqqp */
 $dark-color-secondary: #73747b;
 $dark-border-color: #4a4b50;
 

@@ -42,9 +42,10 @@
       line-height: 1ex;
       display: inline-block;
       vertical-align: middle;
+      filter: $light-filter;
 
       .dark-theme & {
-        filter: invert(100%);
+        filter: $dark-filter;
       }
     }
 

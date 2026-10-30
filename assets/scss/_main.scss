@@ -185,11 +185,17 @@ code {
 }
 
 pre {
-  background: #212020;
+  background: $light-background-secondary;
+  color: $light-color;
   padding: 20px;
   border-radius: 8px;
   font-size: .95rem;
   overflow: auto;
+
+  .dark-theme & {
+    background: $dark-background-hicontrast;
+    color: $dark-color;
+  }
 
   @media #{$media-size-phone} {
     white-space: pre-wrap;
@@ -197,8 +203,6 @@ pre {
   }
 
   code {
-    background: none !important;
-    color: #ccc;
     margin: 0;
     padding: 0;
     font-size: inherit;
@@ -332,4 +336,10 @@ hr {
 	padding: 15px 23px 14px;
 	text-decoration: none;
 	z-index: 100000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+  }
 }

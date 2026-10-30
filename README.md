@@ -4,7 +4,6 @@
 
 - Dark & light modes
 - [**Inter UI font**](https://rsms.me/inter/), made by [Rasmus Andersson](https://rsms.me/about/)
-- Code highlighting with [**PrismJS**](https://prismjs.com)
 - Easy to modify with Hugo tooling
 - Responsive
 - Social icons
